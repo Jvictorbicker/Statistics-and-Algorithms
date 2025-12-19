@@ -5,7 +5,7 @@ public class Moda {
 
     public void Result() {
         int moda = 0;
-        int moreAppeared = 0;
+        int mostAppeared = 0;
 
         for (int i = 0; i < this.number.length; i++) {
             int counter = 0;
@@ -14,17 +14,12 @@ public class Moda {
                     counter++;
                 }
             }
-            if (counter > moreAppeared) {
-                moreAppeared = counter;
-                moda = number[i];
+            if (counter > mostAppeared) {
+            mostAppeared = counter;
+            moda = number[i];
             }
         }
-        System.out.println("moda " + moda);
-    }
-    public static void main(String[] args) {
-        Moda number = new Moda();
-
-        number.Result();
+        System.out.println("moda: " + moda);
     }
 }
 
