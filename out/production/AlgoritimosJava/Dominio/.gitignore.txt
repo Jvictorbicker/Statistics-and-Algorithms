@@ -1,0 +1,13 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Compilados Java
+out/
+target/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
