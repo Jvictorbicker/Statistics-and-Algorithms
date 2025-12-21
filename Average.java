@@ -12,8 +12,13 @@ public class Average {
         return sum / this.numbers.length;
     }
 
-    /* loop through the array
-       sum the array
-       return the sum divided for the number length
-     */
+    /*
+  1) Iterate through the array using a loop.
+
+  2) Accumulate the sum of all elements in the array.
+
+  3) Divide the total sum by the length of the array.
+
+  4) Return the result as the average value.
+*/
 }

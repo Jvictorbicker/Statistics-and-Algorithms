@@ -18,10 +18,19 @@ public class BubbleSort {
         }
     }
 }
-/* Run twice through the array
-   compare if number 1 position is bigger than the second one
-   save number [1]
-   change  number [1] with number [2]
-   give number [1] to number [2]
-   https://github.com/Jvictorbicker
- */
+/*
+  1) Iterate through the array multiple times using two loops.
+
+  2) Compare two adjacent elements at positions j and j + 1.
+
+  3) If the element at position j is greater than the element
+     at position j + 1, a swap is required.
+
+  4) Temporarily store the value at position j.
+
+  5) Move the value at position j + 1 to position j.
+
+  6) Place the stored value into position j + 1.
+
+  7) Repeat this process until the array is fully sorted.
+*/
