@@ -23,3 +23,11 @@ public class SelectionSort {
         Sort();
     }
 }
+/*
+  Iterate over the array using index i
+  Store the value at position i in a temporary variable
+  Start index j from i + 1 to traverse the remaining elements
+  Compare the stored value with the value at index j
+  Update the temporary variable when a smaller/greater value is found
+  After finishing the inner loop, perform the swap outside the inner loop
+*/
