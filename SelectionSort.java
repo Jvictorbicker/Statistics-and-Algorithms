@@ -5,15 +5,15 @@ public class SelectionSort {
 
     public void Sort() {
         for (int i = 0; i < this.numbers.length; i++) {
-            int smallerIndex = i;
+            int numberIndex = i;
             for (int j = i + 1; j < this.numbers.length; j++) {
-                if (numbers[smallerIndex] > numbers[j]) {
-                    smallerIndex = j;
+                if (numbers[numberIndex] > numbers[j]) {
+                    numberIndex = j;
                 }
             }
             int aux = numbers[i];
-            numbers[i] = numbers[smallerIndex];
-            numbers[smallerIndex] = aux;
+            numbers[i] = numbers[numberIndex];
+            numbers[numberIndex] = aux;
         }
         for (int numbers : this.numbers) {
             System.out.println(numbers);
