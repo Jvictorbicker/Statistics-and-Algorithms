@@ -6,8 +6,9 @@ public class SelectionSort {
     public void Sort() {
         for (int i = 0; i < this.numbers.length; i++) {
             int numberIndex = i;
-            for (int j = i + 1; j < this.numbers.length; j++) {
-                if (numbers[numberIndex] > numbers[j]) {
+
+            for  (int j = i + 1; j < this.numbers.length; j++) {
+                if (numbers[j] < numbers[numberIndex]) {
                     numberIndex = j;
                 }
             }
@@ -15,8 +16,8 @@ public class SelectionSort {
             numbers[i] = numbers[numberIndex];
             numbers[numberIndex] = aux;
         }
-        for (int numbers : this.numbers) {
-            System.out.println(numbers);
+        for (int arr : this.numbers) {
+            System.out.println(arr);
         }
     }
     public void main(String[] args) {

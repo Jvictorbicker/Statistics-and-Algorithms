@@ -4,8 +4,8 @@ public class Median {
     private double [] numbers = new double[]{45,12,23,45,67,12};
 
     public void Sort() {
-        for (int i = 0; i < this.numbers.length; i++ ) {
-            for (int j = 0; j < this.numbers.length - i - 1; j++ ) {
+        for (int i = 0; i < this.numbers.length; i++) {
+            for (int j = 0; j < this.numbers.length - i - 1; j++) {
                 if (numbers[j] > numbers[j+1]) {
                     double aux = numbers[j];
                     numbers[j] = numbers[j+1];
