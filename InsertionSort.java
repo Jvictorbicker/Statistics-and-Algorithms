@@ -1,26 +1,24 @@
 package Dominio;
 
 public class InsertionSort {
-    private int[] numbers = new int[]{34,45,23,12,56,78};
+    private static int[] numbers = new int[]{34,45,23,12,56,78};
 
-    public void Sort() {
-        for (int i = 0; i < this.numbers.length; i++) {
-            int currentNumber = numbers[i];
+    public static void Sort() {
+        for (int i = 1; i < numbers.length; i ++) {
+            int sorted = numbers[i];
             int j = i - 1;
 
-            for (j = i - 1; j >= 0 && numbers[j] > currentNumber; j--) {
-                if (numbers[j] > currentNumber) {
-                    numbers[j+1] = numbers[j];
-                }
+            for (j = i - 1; j >= 0 && numbers[j] >= sorted; j--) {
+                numbers[j+1] = numbers[j];
             }
-            numbers[j+1] = currentNumber;
-        }
-        for (int arr : this.numbers) {
-            System.out.println(arr);
+            numbers[j+1] = sorted;
         }
     }
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Sort();
+        for (int arr : numbers) {
+            System.out.println(arr);
+        }
     }
 }
 /*

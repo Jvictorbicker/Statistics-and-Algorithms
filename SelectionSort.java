@@ -5,16 +5,16 @@ public class SelectionSort {
 
     public void Sort() {
         for (int i = 0; i < this.numbers.length; i++) {
-            int numberIndex = i;
+            int index = i;
 
-            for  (int j = i + 1; j < this.numbers.length; j++) {
-                if (numbers[j] < numbers[numberIndex]) {
-                    numberIndex = j;
+            for (int j = i + 1; j < this.numbers.length; j++) {
+                if (numbers[index] > numbers[j]) {
+                    index = j;
                 }
             }
-            int aux = numbers[i];
-            numbers[i] = numbers[numberIndex];
-            numbers[numberIndex] = aux;
+            int aux = numbers[index];
+            numbers[index] = numbers[i];
+            numbers[i] = aux;
         }
         for (int arr : this.numbers) {
             System.out.println(arr);
