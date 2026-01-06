@@ -4,7 +4,7 @@ public class InsertionSort {
     private static int[] numbers = new int[]{34,45,23,12,56,78};
 
     public static void Sort() {
-        for (int i = 1; i < numbers.length; i ++) {
+        for (int i = 1; i < numbers.length; i++) {
             int sorted = numbers[i];
             int j = i - 1;
 
