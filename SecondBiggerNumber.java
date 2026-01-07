@@ -5,22 +5,24 @@ public class SecondBiggerNumber {
 
     public void Result() {
         for (int i = 0; i < this.numbers.length; i++) {
-            for (int j = 0; j < this.numbers.length - i - 1; j++) {
-                if (numbers[j] > numbers[j+1]) {
-                    int aux = numbers[j];
-                    numbers[j] = numbers[j+1];
-                    numbers[j+1] = aux;
+            int index = i;
+
+            for (int j = i + 1; j < this.numbers.length; j++) {
+                if (numbers[index] > numbers[j]) {
+                    index = j;
                 }
             }
+            int aux = numbers[i];
+            numbers[i] = numbers[index];
+            numbers[index] = aux;
         }
-        for (int i = this.numbers.length - 1; i >= 0; i--) {
-            if (numbers[numbers.length - 1] > numbers[i]) {
-                System.out.println("Segundo maior: " + numbers[i]);
+        for (int i = this.numbers.length - 2; i >= 0; i++) {
+            if (numbers[i] < numbers[numbers.length - 1]) {
+                System.out.println("second biggest number is: " + numbers[i]);
                 break;
             }
         }
     }
-
     public static void main(String[] args) {
         SecondBiggerNumber arr = new SecondBiggerNumber();
 

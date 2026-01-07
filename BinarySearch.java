@@ -8,51 +8,52 @@ public class BinarySearch {
             int sorted = numbers[i];
             int j = i - 1;
 
-            for (j = i -1; j >= 0 && numbers[j] >= sorted; j--) {
-                numbers[j+1] = numbers[j];
+            for (j = i - 1; j >= 0 && numbers[j] >= sorted; j--) {
+                numbers[j + 1] = numbers[j];
             }
             numbers[j + 1] = sorted;
         }
     }
-    public static int search(int value) {
+    public static int Search(int value) {
         Sort();
 
         int start = 0;
         int end = numbers.length - 1;
 
-        while (start <= end) {
+        while (end >= start) {
             int mid = (start + end) / 2;
 
-            if (value == numbers[mid]) {
+            if (numbers[mid] == value) {
                 return mid;
-            } else if (numbers[mid] < value) {
-                start = mid + 1;
-            } else {
+            } else if (numbers[mid] > value) {
                 end = mid - 1;
+            } else {
+                start = mid + 1;
             }
         }
         return -1;
     }
-    public static int search2(int value, int start, int end) {
-        if (start > end) {
-            return - 1;
-        }
-        int mid = (start + end) / 2;
+    public static int Search2(int value, int start, int end) {
+        if (end >= start) {
+            int mid = (start + end) / 2;
 
-        if (numbers[mid] == value) {
-            return mid;
-        } else if (numbers[mid] < value) {
-            return search2(value, mid + 1, end);
+            if (numbers[mid] == value) {
+                return mid;
+            } else if (numbers[mid] > value) {
+                return Search2(value, start, mid - 1);
+            } else {
+                return Search2(value,mid + 1, end);
+            }
         } else {
-            return search2(value,start,mid - 1);
+            return -1;
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(search(45));
+        System.out.println(Search(45));
 
         Sort();
-        System.out.println(search2(45, 0, numbers.length - 1));
+        System.out.println(Search2(45, 0, numbers.length - 1));
     }
 }
 
