@@ -1,36 +1,35 @@
 package Dominio;
 
 public class BinarySearchString {
-    private static String[] names = new String[]{"pedro", "ana", "bia", "joao", "julia"};
+    static String[] names = new String[]{"pedro", "ana","julia","bia","isa"};
 
     public static void Sort() {
         for (int i = 1; i < names.length; i++) {
-            int j = i - 1;
             String sorted = names[i];
+            int j = i - 1;
 
             for (j = i - 1; j >= 0 && names[j].compareTo(sorted) > 0; j--) {
-                names[j+1] = names[j];
+                names[j + 1] = names[j];
             }
-            names[j+1] = sorted;
+           names[j + 1] = sorted;
         }
     }
-
-    public static int BinarySearch(String target, int start, int end) {
+    public static int Search(String value, int start, int end) {
+        Sort();
         if (start <= end) {
             int mid = (start + end) / 2;
-            if (names[mid].equals(target)) {
+
+            if (value.equals(names[mid])) {
                 return mid;
-            } else if (names[mid].compareTo(target) > 0) {
-                return BinarySearch(target, start, mid -1);
+            } else if (value.compareTo(names[mid]) > 0) {
+                return Search(value, mid + 1, end);
             } else {
-                return BinarySearch(target, mid + 1, end);
+                return Search(value, start, mid - 1);
             }
         }
         return -1;
     }
-
     public static void main(String[] args) {
-        Sort();
-        System.out.println(BinarySearch("ana", 0, names.length - 1));
+        System.out.println(Search("julia", 0,names.length - 1));
     }
 }
